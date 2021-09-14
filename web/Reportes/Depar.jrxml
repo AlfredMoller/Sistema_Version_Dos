@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Depar" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="38463986-7fb6-4d91-9946-6a870f5a18cc">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="c2lzdGVtYSAsMTUsMTUsMjAxYjllMDAtMmU4Yi00YTgzLWJhMDktMzBkZmIwYTQ0OTU0Ow=="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Moller-ReportConnector"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[Select * from departamento]]>
+	</queryString>
+	<field name="id_departamento" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_departamento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="departamento"/>
+	</field>
+	<field name="num_depar" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="num_depar"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="departamento"/>
+	</field>
+	<field name="nomb_depar" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomb_depar"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="departamento"/>
+	</field>
+	<group name="id_departamento">
+		<groupExpression><![CDATA[$F{id_departamento}]]></groupExpression>
+	</group>
+	<group name="num_depar">
+		<groupExpression><![CDATA[$F{num_depar}]]></groupExpression>
+	</group>
+	<group name="nomb_depar">
+		<groupExpression><![CDATA[$F{nomb_depar}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="2" width="100" height="20" uuid="65090faf-ff42-4612-8caf-07090e1e6e44"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="2" width="132" height="20" uuid="846e4a41-65d7-4718-b565-edd14b3926a7"/>
+				<text><![CDATA[Numero Departamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="408" y="2" width="132" height="20" uuid="f571ce13-8267-48e4-a24f-495fd8a6dbb2"/>
+				<text><![CDATA[Nombre de Departamento]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="36" y="18" width="100" height="20" uuid="20a3d237-1e09-490e-a1c5-bb12732d1807"/>
+				<textFieldExpression><![CDATA[$F{id_departamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="18" width="132" height="20" uuid="4f2236aa-73f7-495c-a42c-6aa4266c3c81"/>
+				<textFieldExpression><![CDATA[$F{num_depar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="408" y="16" width="132" height="20" uuid="42eaf91d-c4ea-4370-ae9e-a137876b7a54"/>
+				<textFieldExpression><![CDATA[$F{nomb_depar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -967,11 +967,14 @@ public class Controlador extends HttpServlet {
                      request.setAttribute("usuario", edao.listar());
                      break;
                   case "Buscar":
-                    String datoDep= request.getParameter("eventos");
+                      String datoDep= request.getParameter("eventos");
+                       request.setAttribute("usuario", edao.listar());
+                    //String id_bususu = ControladorValidar.enviar_idusu();
+                    Integer id_bususu = Integer.parseInt(request.getParameter("combousu"));
                    
                     /*En caso de volver a modificar en futuro sacar las lineas de abajo ya que falta incluir al tipo de usuario*/
                      if(!datoDep.equals("Todos")){
-                        List <ConsAudi> audlista= auddao.buscaAudi(datoDep);
+                        List <ConsAudi> audlista= auddao.buscaAudi(id_bususu,datoDep);
                         request.setAttribute("auditoria", audlista);
                         System.out.println("cualquier evento");
                       

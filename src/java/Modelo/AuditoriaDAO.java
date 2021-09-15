@@ -50,9 +50,10 @@ public class AuditoriaDAO {
         return listaAud;
     }
      
-    public List buscaAudi(String texto){
+    public List buscaAudi(int id_usu ,String actividad){
         List<ConsAudi> listas= new ArrayList<>();
-        String sql="Select * from auditoria,empleado where auditoria.IdUsuario=empleado.IdEmpleado AND evento LIKE  '%" + texto + "%' ";
+        
+        String sql="Select * from auditoria,empleado where auditoria.IdUsuario=empleado.IdEmpleado and auditoria.IdUsuario = '"+id_usu+"'  AND evento = '"+actividad+"'  ";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(sql);

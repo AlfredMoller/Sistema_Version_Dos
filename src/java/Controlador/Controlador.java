@@ -980,14 +980,32 @@ public class Controlador extends HttpServlet {
                         System.out.println("evento todos");
                     }
                     break;
-                case "Backup":
-                    BackUpTest bckup = new BackUpTest();
-                    bckup.backup();
-                    break;
+                case "Borrarbackup":
+                        BackUpTest bckup_del = new BackUpTest();
+                        bckup_del.borrarbackup();
+                    break;    
+                 
                 default:
                     throw new AssertionError();
             }
             request.getRequestDispatcher("ConsultaAudi.jsp").forward(request, response);
+        }
+        
+
+        if (menu.equals("ConfAdv")) {
+            switch (accion) {
+                case "Backup":
+                        BackUpTest bckup = new BackUpTest();
+                        bckup.backup();
+                    break;
+                case "Borrarbackup":
+                        BackUpTest bckup_del = new BackUpTest();
+                        bckup_del.borrarbackup();
+                    break;
+                default:
+                    throw new AssertionError();
+            }
+            request.getRequestDispatcher("BackupRestore.jsp").forward(request, response);
         }
 
     }

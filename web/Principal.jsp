@@ -119,7 +119,8 @@
                                 <div class="dropdown-menu-button"><i class="zmdi zmdi-case zmdi-hc-fw"></i>&nbsp;&nbsp; Administración <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                                 <ul class="list-unstyled"><li><a href="Controlador?menu=Usuario&accion=Listar" target="myFrame"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de Usuario</a></li>
                                     <li><a href="Controlador?menu=Perfil&accion=Listar" target="myFrame"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de Perfiles</a></li>  
-                                    <li><a href="Controlador?menu=Auditoria&accion=Listar" target="myFrame"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp;Consulta Auditoria</a></li>  
+                                    <li><a href="Controlador?menu=Auditoria&accion=Listar" target="myFrame"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp;Consulta Auditoria</a></li>
+                                     <li><a href="Controlador?menu=ConfAdv&accion=Backup" target="myFrame"><i class="zmdi zmdi-download zmdi-hc-fw"></i>&nbsp;&nbsp;Respaldar Sistema</a></li>  
 
                                 </ul>
                             </li>
@@ -131,7 +132,7 @@
                                 <ul class="list-unstyled"><li><a href="Controlador?menu=Usuario&accion=Listar" target="myFrame"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de Usuario</a></li>
                                     <li><a href="Controlador?menu=Perfil&accion=Listar" target="myFrame"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de Perfiles</a></li>  
                                     <li><a href="Controlador?menu=Auditoria&accion=Listar" target="myFrame"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp;Consulta Auditoria</a></li>  
-
+                           
                                 </ul>
                             </li>
                         </c:if>
@@ -160,7 +161,7 @@
                             </ul>
                         </li>
                         <!--<li><a href="report.html"><i class="zmdi zmdi-trending-up zmdi-hc-fw"></i>&nbsp;&nbsp; Reportes y estadísticas</a></li>-->
-                        <li><a href="advancesettings.html"><i class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp; Configuraciones avanzadas</a></li>
+                        <!--<li><a href="advancesettings.html"><i class="zmdi zmdi-wrench zmdi-hc-fw"></i>&nbsp;&nbsp; Configuraciones avanzadas</a></li>-->
                     </ul>
                 </div>
             </div>

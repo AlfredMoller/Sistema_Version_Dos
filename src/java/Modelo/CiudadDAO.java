@@ -80,17 +80,17 @@ public class CiudadDAO {
             ps = con.prepareStatement(query);
             ps.setString(1, ci.getNomciu());
             rs = ps.executeQuery();
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 count = rs.getInt("count(nomb_ciu)");
             }
-          
+
         } catch (Exception e) {
-             System.out.println("Error al verificar existencia de ciudad"+" "+e);
+            System.out.println("Error al verificar existencia de ciudad" + " " + e);
         }
-        
-       if (count == 0) {
-        String sql = "insert into ciudad(nomb_ciu,id_departamento)values(?,?)";
+
+        if (count == 0) {
+            String sql = "insert into ciudad(nomb_ciu,id_departamento)values(?,?)";
             try {
                 con = cn.Conexion();
                 ps = con.prepareStatement(sql);
@@ -108,9 +108,9 @@ public class CiudadDAO {
 
                 }
             } catch (Exception e) {
-                 System.out.println("Error al realizar guardado de ciudad"+" "+e);
+                System.out.println("Error al realizar guardado de ciudad" + " " + e);
             }
-         }else {
+        } else {
 
             //System.out.println("user exists");
             out.println("<p style='color:red;'>El Número de Departamento Existe...</p>");
@@ -156,36 +156,40 @@ public class CiudadDAO {
             }
 
         } catch (Exception e) {
-            System.out.println("Error al realizar modificacion de ciudad"+" "+e);
+            System.out.println("Error al realizar modificacion de ciudad" + " " + e);
         }
         return r;
     }
-
-    /*public void delete(int id, String id_usu) {
-        ciu = listarId(id);
-        String objeto = "Ciudad Con Nombre:" + " " + ciu.getNomciu();
-        String evento = "Eliminar";
-        String tabla = "Ciudad";
-        auditoria.audi(id_usu, objeto, evento, tabla);
-
-        String sql = "delete from ciudad where id_ciudad=" + id;
-        try {
-            con = cn.Conexion();
-            ps = con.prepareStatement(sql);
-            ps.executeUpdate();
-
-            /*
-            int n= ps.executeUpdate();
-            if(n > 0){
-              Condicional par guardar auditoria
-            }
-            **/
-         /*   ps.close();
-        } catch (Exception e) {
-            System.out.println("Error al realizar supresion de ciudad"+" "+e);
-        }
-    }*/
     
+    
+    
+
+    public List<Ciudad> listarCiudaddep(String id_dep) {
+        List<Ciudad> ciud_dep = new ArrayList<>();
+        try {
+            String sql= "select * from ciudad where id_departamento =? ";
+            con = cn.Conexion();
+            ps.setString(1, id_dep);
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Ciudad ciud = new Ciudad();
+                ciud.setId(rs.getInt("id_ciudad"));
+                ciud.setNomciu(rs.getString("nomb_ciu"));
+                ciud.setIddpear(rs.getString("id_departamento"));
+                ciud_dep.add(ciud);
+            }
+
+        } catch (Exception e) {
+            System.out.println("No se pudo traer los resultados del combo ciudad" + " " + e);
+        }
+        return ciud_dep;
+    }
+    
+    
+    
+
     public void delete(int id, String id_usu) {
 
         /*Datos guardados de manera provisioria hasta que descubramos como funciona*/
@@ -203,10 +207,10 @@ public class CiudadDAO {
             //ps.executeUpdate();
 
             int n = ps.executeUpdate();
-             if (n > 0) {
-             
-             }
-              
+            if (n > 0) {
+
+            }
+
             /*
                   String id_data = String.valueOf(id);
                   String usuario = "2";
@@ -225,7 +229,7 @@ public class CiudadDAO {
             ps.close();
 
         } catch (Exception e) {
-             System.out.println("Error al realizar supresion de ciudad"+" "+e);
+            System.out.println("Error al realizar supresion de ciudad" + " " + e);
         }
     }
 
